@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <!--<RuntimeIdentifier>cosmos</RuntimeIdentifier>-->
+        <Platform>cosmos</Platform>
+        <SupportsX86Intrinsics>false</SupportsX86Intrinsics>
+        <SelfContained>True</SelfContained>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <EnableGDB>False</EnableGDB>
+        <StartCosmosGDB>False</StartCosmosGDB>
+        <VisualStudioDebugPort>Pipe: Cosmos\Serial</VisualStudioDebugPort>
+        <CosmosDebugPort>Serial: COM1</CosmosDebugPort>
+        <Launch>VMware</Launch>
+        <Profile>VMware</Profile>
+        <Description>Use VMware Player or Workstation to deploy and debug.</Description>
+        <PxeInterface>192.168.0.8</PxeInterface>
+        <VMWareEdition>Workstation</VMWareEdition>
+        <DebugEnabled>False</DebugEnabled>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="sys\gui\res\cur\aero1.bmp" />
+      <None Remove="sys\gui\res\cur\aero2.bmp" />
+      <None Remove="sys\gui\res\cur\aero3.bmp" />
+      <None Remove="sys\gui\res\cur\aero4.bmp" />
+      <None Remove="sys\gui\res\cur\aero5.bmp" />
+      <None Remove="sys\gui\res\wp\wallpaper1.bmp" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="sys\gui\res\cur\aero1.bmp" />
+      <EmbeddedResource Include="sys\gui\res\cur\aero2.bmp" />
+      <EmbeddedResource Include="sys\gui\res\cur\aero3.bmp" />
+      <EmbeddedResource Include="sys\gui\res\cur\aero4.bmp" />
+      <EmbeddedResource Include="sys\gui\res\cur\aero5.bmp" />
+      <EmbeddedResource Include="sys\gui\res\wp\wallpaper1.bmp" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Build" Version="0-*" NoWarn="NU1604" />
+        <PackageReference Include="Cosmos.Debug.Kernel" Version="0-*" NoWarn="NU1604" />
+        <PackageReference Include="Cosmos.System2" Version="0-*" NoWarn="NU1604" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="sys\gui\res\icons\8\" />
+      <Folder Include="sys\gui\res\icons\16\" />
+      <Folder Include="sys\gui\res\icons\32\" />
+    </ItemGroup>
+
+</Project>
